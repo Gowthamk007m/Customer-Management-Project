@@ -19,3 +19,5 @@ Multiparameter Search: Admin can search for various user order by sorting data b
 Frontend: HTML, CSS<br>
 Backend: Python, Django<br>
 Database: SQLite<br>
+
+<h4>Contributions</h4> Feel free to fork the repository and create a pull request with your contribution. For any bug reports or feature requests, you can file an issue on the repository.
