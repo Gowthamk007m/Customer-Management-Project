@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Trebuchet MS', sans-serif;
+
+            background-color: rgb(255, 255, 255);
+        }
+
+        .Container {
+            background-color: rgb(196, 189, 189);
+            height: 100%;
+            min-height: 100%;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+            margin-bottom: 10px;
+        }
+
+        .container2 {
+            background-color: rgb(255, 255, 255);
+
+
+        }
+
+       
+
+    
+        .element2 {
+            color: rgb(0, 0, 0);
+            margin: 20px;
+            padding: 0px 0px;
+            font: bold;
+        }
+
+        .myButton {
+            box-shadow: inset 0px 0px 0px 0px #a6827e;
+            background: linear-gradient(to bottom, #7d5d3b 5%, #634b30 100%);
+            background-color: #bb7428;
+            border-radius: 3px;
+            border: 0px solid #c1752e;
+            display: inline-block;
+            cursor: pointer;
+            color: #ffffff;
+            font-family: Arial;
+            font-size: 0px;
+            padding-left: 8px;
+            padding-right: 8px;
+            padding-top: 4px;
+            text-decoration: none;
+            text-shadow: 0px 0px 0px #4d3534;
+        }
+
+        .myButton:hover {
+
+            background: linear-gradient(to bottom, #751111 5%, #9c6511 100%);
+            background-color: #ffffff;
+            color: #fffcfc;
+        }
+
+        .myButton:active {
+            position: relative;
+            top: 1px;
+        }
+        
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    background-color: #333;
+    color: #fff;
+    padding: 0 20px;
+}
+
+.navbar-center {
+    flex: 1;
+    text-align: justify;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.navbar-right {
+    display: flex;
+}
+
+.navbar-button {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.navbar-button:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="navbar" >
+        <div class="navbar-center">welcome_{{user}}</div>
+
+        <div class="navbar-center">Customer Management</div>
+        
+        <div class="navbar-right">
+          
+    
+          <p class="navbar-center" ></p>
+          <a class="navbar-button" href="{% url 'logout' %}">Logout</a>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="Container">
+        <div class="Container">
+            <div class="row">
+
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            <center>
+                                <h4>Total Orders</h4>
+                        </div>
+                        <div class="card-body">
+                            <center>
+                                <h5 class="card-title">{{total_order}}</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            <center>
+                                <h4>Orders Delivered</h4>
+                        </div>
+                        <div class="card-body">
+                            <center>
+                                <h5 class="card-title">{{order_delivered}}</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            <center>
+                                <h4>Orders Pending</h4>
+                        </div>
+                        <div class="card-body">
+                            <center>
+                                <h5 class="card-title">{{order_pending}}</h5>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="element2">
+            <h4>Customers:{{total_customer}}</h4>
+        </div>
+    </div>
+    <br>
+    <center>
+
+        <div class="row" style="background-color: #8b8080; width: 98%; ">
+            <div class="Container col-5" style="background-color: #ffffff;">
+                <div>
+
+                    <table style="width:100%; margin: 6px;">
+                        <div>
+                            <center>
+                                <h5 class=" btn-primary" style="width: 100%; margin: 6px; background-color: #552222;">Registered Users</h4>
+                            </center>
+
+                        </div>
+
+
+                        <tr>
+                            <td style="width: 25%;">
+
+                            </td>
+                            <td>
+                                <h5>Customers</h5>
+                            </td>
+                            <td>
+                                <h5>Orders</h5>
+                            </td>
+                        </tr>
+                        {% for i in customer %}
+                        <tr style="border-top:solid;border-width: 2px;border-top-color: rgb(95, 68, 68);">
+                            <td><a style="text-decoration: none;" class="myButton hover" href="{% url 'customer' i.id %}">
+                                    <h6>View</h6>
+                                </a></td>
+                            <td>
+                                <h6>{{i.name}}</h6>
+                            </td>
+                            <td>
+                                <h6>order</h6>
+                            </td>
+                        </tr>
+                        {% endfor %}
+
+
+
+                    </table>
+                </div>
+            </div>
+
+            <div class="Container col" style="background-color: #ffffff;">
+                <table style="width:100%; margin: 5px;">
+                    <div>
+                        <center>
+                            <h5 class=" btn-primary" style="width: 100%; margin: 6px; background-color: #552222;">All Orders</h4>
+                        </center>
+
+                    </div>
+
+                    <tr>
+                        <td>
+                            <h5>Product</h5>
+                        </td>
+                        <td>
+                            <h5>Date Ordered</h5>
+                        </td>
+                        <td>
+                            <h5>Status</h5>
+                        </td>
+                        <td>
+                            <h5>Update</h5>
+                        </td>
+                        <td>
+                            <h5>Remove</h5>
+                        </td>
+                    </tr>
+
+                    {% for i in order %}
+                    <tr style="border-top:solid;border-width: 2px;border-top-color: rgb(95, 68, 68);">
+                        <td>
+                            <h6>{{i.product}}</h6>
+                        </td>
+                        <td>
+                            <h6>{{i.date_created}}</h6>
+                        </td>
+                        <td>
+                            <h6>{{i.status}}</h6>
+                        </td>
+                        <td>
+                            <h6><a style="text-decoration: none; color: rgb(255, 255, 255);" class="myButton hover"
+                                    href="{% url 'update_order' i.id %}">
+                                    <h6>Update</h6>
+                                </a></h6>
+                        </td>
+                        <td>
+                            <h6><a style="text-decoration: none; color: rgb(255, 255, 255);" class="myButton hover"
+                                    href="{% url 'delete_order' i.id %}">
+                                    <h6>Remove</h6>
+                                </a></h6>
+                        </td>
+                    </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+        </div>
+
+    </center>
+
+</body>
+
+</html>

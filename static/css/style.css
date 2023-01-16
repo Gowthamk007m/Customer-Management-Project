@@ -1,0 +1,73 @@
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+
+    background-color: rgb(180, 138, 138);
+}
+
+.Container {
+    background-color: rgb(196, 189, 189);
+    height: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.container2 {
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    min-height: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+
+
+}
+
+.div2 {
+    margin: 10px;
+    padding: 10px;
+}
+
+.element {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin: 20px;
+    padding: 0px 0px;
+
+}
+
+.element2 {
+    color: rgb(0, 0, 0);
+    margin: 20px;
+    padding: 0px 0px;
+    font: bold;
+}
+
+.myButton {
+box-shadow:inset 0px 0px 0px 0px #a6827e;
+background:linear-gradient(to bottom, #7d5d3b 5%, #634b30 100%);
+background-color:#7d5d3b;
+border-radius:3px;
+border:0px solid #54381e;
+display:inline-block;
+cursor:pointer;
+color:#ffffff;
+font-family:Arial;
+font-size:0px;
+padding:0px 10px;
+text-decoration:none;
+text-shadow:0px 0px 0px #4d3534;
+}
+.myButton:hover {
+background:linear-gradient(to bottom, #634b30 5%, #7d5d3b 100%);
+background-color:#634b30;
+}
+.myButton:active {
+position:relative;
+top:1px;
+}
+

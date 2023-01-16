@@ -1,0 +1,192 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      .container {
+  width: 100%;
+  padding: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.col-4 {
+  height: 100%;
+  flex: 1;
+  padding: 5px;
+ 
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+h1 {
+    text-align:center;
+    color: #00BFFF;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    background-color: #333;
+    color: #fff;
+    padding: 0 20px;
+}
+
+.navbar-center {
+    flex: 1;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.navbar-right {
+    display: flex;
+}
+
+.navbar-button {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.navbar-button:hover {
+    background-color: #444;
+}
+.account {
+            display: flex;
+        }
+
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        .user-details {
+            padding: 10px;
+        } 
+        .card {
+      background-color: white;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
+      border-radius: 5px;
+      text-align: center;
+  }
+  .card img {
+      border-radius: 5px 5px 0 0;
+      width: 100%;
+      height: auto;
+  }
+    </style>
+  </head>
+  <body>
+    <div class="navbar" >
+      
+
+      <div class="navbar-center">Customer Management</div>
+      
+      <div class="navbar-right">
+        
+  
+        <p class="navbar-center" ></p>
+        <a class="navbar-button" href="{% url 'logout' %}">Logout</a>
+      </div>
+    </div>
+
+    <div style="display: flex;">
+      <div style="width: 33%; padding: 20px;">
+        <div class="card">
+          <center><img src="{{customer.profile_pic.url}}" alt="Customer" style="width: 50%; border-radius: 50%;"></center>
+          <div class="card-content">
+            <h3>{{customer.name}}</h3>
+          </div>
+        </div>
+      </div>
+      <div style="width: 33%; padding: 20px;">
+        <div class="card">
+          <div class="card-content">
+            <h3>Contact Information</h3>
+            <p>Phone: {{customer.phone}}</p>
+            <p>Email: {{customer.email}}</p>
+          </div>
+        </div>
+      </div>
+      <div style="width: 33%; padding: 20px;">
+        <div class="card">
+          <div class="card-content">
+            <h3>Total Orders</h3><br>
+            <h2>{{order_count}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  <div class="row"  style="margin-left: 30px;">
+    <div class="col-11" >
+      <br>
+<form action="" method="get">
+
+  <div class="row" style="width: 50%;"> {{myFilter.form}}</div>
+  <br>
+  <button class="btn btn-primary" type="submit">Search</button>
+
+ 
+</form>
+      
+
+    
+<br>
+
+
+            <table>
+              <tr>
+                <th>Products</th>
+                <th>Category</th>
+                <th>Date Created</th>
+                <th>Status</th>
+                <!-- <th>Update</th>
+                <th>Remove</th> -->
+              </tr>
+              {% for i in order %}
+              <tr>
+                <td>{{i.product.name}}</td>
+                <td>{{i.product.category}}</td>
+                <td>{{i.date_created}}</td>
+                <td>{{i.status}}</td>
+                <!-- <td><a class="btn btn-primary" href="">Update</a></td>
+                <td><a class="btn btn-danger" href="">Remove</a></td> -->
+              </tr>
+              {% endfor %}
+            </table>
+            </div>
+
+        </div>
+
+</div>
+
+
+  </body>
+</html>
