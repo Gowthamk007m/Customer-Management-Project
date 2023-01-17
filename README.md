@@ -22,8 +22,20 @@ Database: SQLite<br>
 
 <h4>Contributions</h4> Feel free to fork the repository and create a pull request with your contribution. For any bug reports or feature requests, you can file an issue on the repository.
 
+<h3>Admin Homepage</h3>
+
+This page contains informations about all the customers and their orders along with it's status.
+
 ![Admin page](https://user-images.githubusercontent.com/116723241/212699299-44475b28-c651-4763-ac83-6677facc52d5.png)<br>
 
+<h3>Customer Details</h3>
+
+Here admins can navigate through Customer accounts without being able to changing any data.
+
 ![customer data](https://user-images.githubusercontent.com/116723241/212699362-7ea9a5f9-acb9-458b-9675-70d2dd062e49.png)<br>
+
+<h3>User Homepage</h3>
+
+In this page users can place their orders and also can redirect to settings page to edit their personal details. 
 
 ![user order](https://user-images.githubusercontent.com/116723241/212699399-4f359909-bbe0-47e6-ab1f-2a73a779771b.png)<br>
