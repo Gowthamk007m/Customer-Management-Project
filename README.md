@@ -38,4 +38,6 @@ Here admins can navigate through Customer accounts without being able to changin
 
 In this page users can place their orders and also can redirect to settings page to edit their personal details. 
 
-![user order](https://user-images.githubusercontent.com/116723241/212699399-4f359909-bbe0-47e6-ab1f-2a73a779771b.png)<br>
+![Screenshot (63)](https://user-images.githubusercontent.com/116723241/212813924-620963d5-bd9c-4702-81ac-7ec21a7e5e3c.png)<br>
+
+
