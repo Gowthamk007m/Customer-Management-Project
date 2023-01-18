@@ -1,12 +1,13 @@
 # Customer Management App
 
-use:
-(Admin)username=gowtham ,password= 1234
-(User)username=Akshay ,password= rono1234
-
 This is a Customer Management App that allows an admin to view and update user data, and allows users to place orders, upload their personal data, and register and log in to the system.
 
-Features
+<h2>use:</h2>
+(Admin)username=gowtham ,password= 1234<br>
+(User)username=Akshay ,password= rono1234
+
+<h2>Features</h2>
+
 Admin Functions: An admin can view and update user data, including user details and order count. Admins can also update the status of orders.
 
 User Functions: Users can place orders, upload their personal data, and register and log in to the system. Users can also view their order history and update their personal information.
